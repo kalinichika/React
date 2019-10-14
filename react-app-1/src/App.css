@@ -1,0 +1,12 @@
+.container{
+  width: 700px;
+  border: 1px solid black;
+  margin: 30px auto;
+  padding: 20px;
+  line-height: 30px;
+}
+.container::after{
+  content: "";
+  display: table;
+  clear: both;
+}
