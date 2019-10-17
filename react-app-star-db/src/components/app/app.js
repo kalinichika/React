@@ -1,24 +1,44 @@
 import React, { Component } from "react";
 import Header from "../header";
-import ItemList from "../item-list";
+import ErrorButton from "../error-button";
 import RandomPlanet from "../random-planet";
-import PersonDetails from "../person-details";
+import ErrorIndicator from "../error-indicator";
 import "./app.css";
+import PersonPage from "../person-page/person-page";
 
 export default class App extends Component {
+  state = {
+    showRandomPlanet: true,
+    hasError: false
+  };
+  toggleRandomPlanet = () => {
+    this.setState({
+      showRandomPlanet: !this.state.showRandomPlanet
+    });
+  };
+  componentDidCatch() {
+    this.setState({ hasError: true });
+  }
   render() {
+    if (this.state.hasError) {
+      return <ErrorIndicator />;
+    }
+    const { showRandomPlanet } = this.state;
+    const randomPlanet = showRandomPlanet ? <RandomPlanet /> : null;
     return (
       <div>
         <Header />
-        <RandomPlanet />
-        <div className="row mb2">
-          <div className="col-md-6">
-            <ItemList />
-          </div>
-          <div className="col-md-6">
-            <PersonDetails />
-          </div>
-        </div>
+        {randomPlanet}
+        <button
+          className="toggle-planet btn btn-warning btn-lg"
+          onClick={this.toggleRandomPlanet}
+        >
+          Toggle Random Planet
+        </button>
+        <ErrorButton />
+        <PersonPage />
+        <PersonPage />
+        <PersonPage />
       </div>
     );
   }
