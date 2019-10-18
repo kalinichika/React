@@ -51,10 +51,10 @@ export default class PersonDetails extends Component {
               <span className="term">Eye Color</span>
               <span>{eyeColor}</span>
             </li>
+            <div>
+              <ErrorButton />
+            </div>
           </ul>
-        </div>
-        <div>
-          <ErrorButton />
         </div>
       </div>
     );

@@ -1,11 +1,8 @@
-.button-row {
-  margin: 0 0 1rem 0;
+button {
+  margin-right: 0.8rem;
+  margin-bottom: 1rem;
 }
 
-.button-row button {
-  margin-right: 1rem;
-}
-
-.stardb-app .row {
+.row {
   margin-bottom: 1rem;
 }
