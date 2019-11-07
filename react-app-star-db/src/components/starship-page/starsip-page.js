@@ -6,7 +6,7 @@ import ErrorIndicator from "../error-indicator";
 import ErrorBoundry from "../error-boundry";
 import Row from "../row";
 
-export default class PlanetPage extends Component {
+export default class StarshipPage extends Component {
   swapiService = new SwapiService();
 
   state = {
@@ -27,7 +27,7 @@ export default class PlanetPage extends Component {
     if (this.state.hasError) {
       return <ErrorIndicator />;
     }
-    const { getPlanet, getPlanetImage } = this.swapiService;
+    const { getStarship, getStarshipImage } = this.swapiService;
 
     const itemList = (
       <ErrorBoundry>
@@ -43,9 +43,12 @@ export default class PlanetPage extends Component {
       <ErrorBoundry>
         <ItemDetails
           itemId={1}
-          getData={getPlanet}
-          getImageUrl={getPlanetImage}
+          getData={getStarship}
+          getImageUrl={getStarshipImage}
         >
+          <Record field="model" label="Model" />
+          <Record field="length" label="Length" />
+          <Record field="costInCredits" label="Cost" />
         </ItemDetails>
       </ErrorBoundry>
     );
