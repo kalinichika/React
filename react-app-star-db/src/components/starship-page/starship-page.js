@@ -5,9 +5,7 @@ import ItemList from "../item-list/item-list";
 import ItemDetails, { Record } from "../item-details/item-details";
 import Row from "../row";
 
-import "./person-page.css";
-
-export default class PersonPage extends Component {
+export default class StarshipPage extends Component {
   swapiService = new SwapiService();
 
   state = {
@@ -19,24 +17,28 @@ export default class PersonPage extends Component {
   };
 
   render() {
-    const { getPerson, getPersonImage } = this.swapiService;
+    const { getStarship, getStarshipImage } = this.swapiService;
 
     const itemList = (
       <ItemList
         onItemSelected={this.onItemSelected}
-        getData={this.swapiService.getAllPeople}
+        getData={this.swapiService.getAllStarships}
       >
-        {i => `${i.name} (${i.birthYear})`}
+        {i => `${i.name} (${i.model})`}
       </ItemList>
     );
 
     const itemDetails = (
-      <ItemDetails itemId={11} getData={getPerson} getImageUrl={getPersonImage}>
-        <Record field="gender" label="Gender" />
-        <Record field="eyeColor" label="Eye Color" />
+      <ItemDetails
+        itemId={9}
+        getData={getStarship}
+        getImageUrl={getStarshipImage}
+      >
+        <Record field="model" label="Model" />
+        <Record field="length" label="Length" />
+        <Record field="costInCredits" label="Cost" />
       </ItemDetails>
     );
-
     return <Row left={itemList} right={itemDetails} />;
   }
 }

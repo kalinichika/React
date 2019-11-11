@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import "./item-details.css";
+
+import ErrorButton from "../error-button/error-button";
 import SwapiService from "../../services/swapi-service";
-import ErrorButton from "../error-button";
+
+import "./item-details.css";
 
 const Record = ({ item, field, label }) => {
   return (
@@ -11,6 +13,7 @@ const Record = ({ item, field, label }) => {
     </li>
   );
 };
+
 export { Record };
 
 export default class ItemDetails extends Component {
@@ -36,6 +39,7 @@ export default class ItemDetails extends Component {
     if (!itemId) {
       return;
     }
+
     getData(itemId).then(item => {
       this.setState({
         item,
@@ -46,16 +50,17 @@ export default class ItemDetails extends Component {
 
   render() {
     const { item, image } = this.state;
-
-    //if (!item) return <Spinner />;
     if (!item) {
       return <span>Select a item from a list</span>;
     }
+    const { name } = item;
+
     return (
       <div className="item-details card">
         <img className="item-image" src={image} alt="item" />
+
         <div className="card-body">
-          <h4>{item.name}</h4>
+          <h4>{name}</h4>
           <ul className="list-group list-group-flush">
             {React.Children.map(this.props.children, child => {
               return React.cloneElement(child, { item });
