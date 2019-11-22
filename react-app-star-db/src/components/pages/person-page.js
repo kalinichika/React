@@ -4,7 +4,7 @@ import Row from "../row";
 
 export default class PersonPage extends Component {
   state = {
-    selectedItem: 5
+    selectedItem: null
   };
 
   onItemSelected = selectedItem => {

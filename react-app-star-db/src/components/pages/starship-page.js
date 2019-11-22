@@ -4,7 +4,7 @@ import Row from "../row";
 
 export default class StarshipPage extends Component {
   state = {
-    selectedItem: 1
+    selectedItem: null
   };
 
   onItemSelected = selectedItem => {
@@ -13,7 +13,10 @@ export default class StarshipPage extends Component {
 
   render() {
     return (
-      <Row left={<StarshipList />} right={<StarshipDetails itemId={11} />} />
+      <Row
+        left={<StarshipList />}
+        right={<StarshipDetails itemId={this.state.selectedItem} />}
+      />
     );
   }
 }
