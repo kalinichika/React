@@ -1,0 +1,14 @@
+.root {
+  height: 100vh;
+}
+.paper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form {
+  width: 100%;
+}
+.submit {
+  margin: 1px;
+}
