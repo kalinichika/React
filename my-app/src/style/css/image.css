@@ -1,0 +1,28 @@
+body {
+  font-family: "Cinzel", "Cormorant", serif;
+  font-size: 22px;
+  background-color: #fefefe;
+}
+
+.page {
+  margin-top: 24px;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.circle, img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+img.circle {
+  border-radius: 50% 50%;
+}
+
+/*# sourceMappingURL=image.css.map */

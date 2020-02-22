@@ -1,0 +1,27 @@
+@use "base";
+
+.navigation {
+  width: 100%;
+  display: inline-flex;
+  max-height: 100px;
+  justify-content: center;
+}
+.main-navigation__nav-tabs {
+  min-width: 100px;
+  padding: 12px;
+  margin: 4px;
+  font-size: base.$font-size-middle;
+  color: base.$secondary-text-color;
+  text-decoration: none;
+  text-align: center;
+  background-color: base.$secondary-color;
+}
+.main-navigation__nav-tabs:hover {
+  box-shadow: base.$shadow-plane2;
+  transition: all 0.6s ease-in-out;
+}
+.main-navigation__nav-tabs:focus,
+.nav-tabs--active {
+  background-color: base.$third-color;
+  box-shadow: 0px 1px 6px base.$primary-variant-color;
+}

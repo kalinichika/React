@@ -1,0 +1,34 @@
+$primary-color: #d2b9da;
+$primary-variant-color: #8273a5;
+$secondary-color: #a0d9b7;
+$secondary-variant-color: #3f3a4b;
+$third-color: #f1b79d;
+
+$background-color: #fefefe;
+$error-color: #f44336;
+
+$primary-text-color: black;
+$secondary-text-color: white;
+$third-text-color: #8e8cba;
+
+$shadow-simple: 0px 1px 6px $secondary-variant-color;
+$shadow-material: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+$shadow-plane1: 0 0 0 2px white, 0 0 0 4px $secondary-color;
+$shadow-plane2: 200px 0 0 0 $third-color inset;
+$shadow-plane3:  0 0 0 2px $secondary-color inset, 0 0 0 4px white inset;
+
+$font-stack: 'Cinzel', 'Cormorant', serif;
+$font-size-small: 16px;
+$font-size-normal: 22px;
+$font-size-middle: 28px;
+$font-size-large: 42px;
+
+body {
+  font-family: $font-stack;
+  font-size: $font-size-normal;
+  background-color: $background-color;
+}
+.page {
+  margin-top: 24px;
+}

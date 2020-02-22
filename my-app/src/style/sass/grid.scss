@@ -1,0 +1,31 @@
+.grid-container {
+  width: 100%;
+  height: calc(100% - 50px);
+  margin-top: 32px;
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: 25% 40% 25%;
+  grid-template-rows: 40% 40%;
+  grid-template-areas:
+    "item0 main item2"
+    "item1 main item3";
+  .grid-item {
+    margin: 8px;
+  }
+  .grid-item--main {
+    grid-area: main;
+  }
+  
+  .grid-item--0 {
+    grid-area: item0;
+  }
+  .grid-item--1 {
+    grid-area: item1;
+  }
+  .grid-item--2 {
+    grid-area: item2;
+  }
+  .grid-item--3 {
+    grid-area: item3;
+  }
+}

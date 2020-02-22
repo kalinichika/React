@@ -1,0 +1,24 @@
+@use "base";
+
+.card-box {
+  padding: 8px 24px;
+  text-align: center;
+  .card-box__header {
+    height: 50px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    font-size: base.$font-size-middle;
+  }
+  .card-box__image {
+    height: calc(100% - 50px - 50px);
+  }
+  box-shadow: base.$shadow-material;
+}
+.card-box:hover {
+  box-shadow: base.$shadow-simple;
+  transition: all 0.4s ease-in-out;
+}
+.card-box--main .card-box__header {
+  margin-top: 0px;
+  font-size: base.$font-size-large;
+}
