@@ -8,7 +8,7 @@ const ItemList = props => {
   const items = data.map(item => {
     const { id } = item;
     const label = renderLabel(item);
-
+console.log(props)
     return (
       <li
         className="list-group-item"

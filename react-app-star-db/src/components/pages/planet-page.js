@@ -14,7 +14,7 @@ export default class PlanetPage extends Component {
   render() {
     return (
       <Row
-        left={<PlanetList />}
+        left={<PlanetList onItemSelected={this.onItemSelected}/>}
         right={<PlanetDetails itemId={this.state.selectedItem} />}
       />
     );
